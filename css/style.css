@@ -71,6 +71,26 @@ main.row{
     
 }
 
+/*** aside list_contacts ***/
+
+.list_contacts{
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.list_contacts:hover{
+    background-color: #E9EBEB;
+}
+
+
+.card_chat> span{
+    display: block;
+}
+
+.card_chat > span:last-child{
+    color: grey;
+    font-size: 0.8rem;
+}
 
 /*** MAIN CHAT ***/
 
@@ -81,5 +101,4 @@ main.row{
 .input_message{
     background-color:#EAEAEA ;
     
-
 }
