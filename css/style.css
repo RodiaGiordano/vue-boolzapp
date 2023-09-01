@@ -102,6 +102,8 @@ main.row{
     padding: 10px 0 10px 10px;
     border-top: 0.1px solid #E9EBEB;
 
+    height: calc(100% / 6);
+
 }
 
 
