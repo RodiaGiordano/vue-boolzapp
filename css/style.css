@@ -1,6 +1,6 @@
 .container{
     background-image: linear-gradient(to bottom,#009688 20%, #DBDBD1 50%, gray);
-    min-width: 1200px;
+    min-width: 1440px;
     
 }
 
@@ -19,7 +19,7 @@ main.row{
 
 .aside_bar{
     background-color: #F9F9F9;
-    border-right: 1px solid grey;
+    border-right: 1px solid lightgray;
     
     overflow: hidden;
     
@@ -81,21 +81,19 @@ main.row{
 }
 
 
-
-.list_contacts{
+.list_contacts> li:hover{
     list-style-type: none;
-    cursor: pointer;
-    
-}
-
-.list_contacts:hover{
     background-color: #E9EBEB;
+    cursor: pointer;
 }
 
 .list_contacts> li{
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    align-items: start;
+    gap: 0.5rem;
+    
+    padding: 10px 0 10px 10px;
+    border-top: 0.1px solid #E9EBEB;
 
 }
 
@@ -109,7 +107,9 @@ main.row{
     font-size: 0.8rem;
 }
 
-
+.message_time{
+    font-size: 0.6rem;
+}
 
 
 /*** MAIN CHAT ***/
