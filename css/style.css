@@ -1,0 +1,61 @@
+.container{
+    
+    background-image: linear-gradient(to bottom,#009688 20%, #DBDBD1 50%, gray);
+      
+}
+
+
+.debug{
+    border: 2px dashed red;
+    height: 300px;
+}
+
+
+/*** ASIDE ***/
+
+.chat_defoult{
+    background-color: #EAEAEA;
+}
+
+
+.circle_icon{
+    object-fit:cover;
+    overflow: hidden;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.avatar{
+    width: 100%;
+    
+}
+
+.icon{
+    color: #EAEAEA;
+    
+}
+
+
+.notification{
+    background-color: #8EDAFC;
+}
+
+.text_notification{
+    font-weight: bold;
+    width: 80%;
+
+}
+
+.link_notification{
+    font-size: small;
+    font-weight: 100;
+    color: black;
+    
+}
+
+.notification> .circle_icon{
+    background-color: white;
+    color: #8EDAFC;
+    
+}

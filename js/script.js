@@ -8,7 +8,16 @@ createApp({
         contacts,
        
     }   
+},
+
+methods:{
+
+    
+    
 }
+
+
+
 }).mount('#app')
         
         
