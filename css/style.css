@@ -92,6 +92,13 @@ main.row{
     background-color: #E9EBEB;
 }
 
+.list_contacts> li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
 
 .card_chat> span{
     display: block;
