@@ -84,12 +84,12 @@
                     <ul class="list_contacts mb-0 p-0">
                         <li v-for="(contact, index) in contacts" in contacts class=''>
                             <div class="circle_icon">
-                                <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                                <img class="avatar" :src="contacts[index].avatar" alt="">
                             </div>
                                 
                             <div class="card_chat me-auto">
 
-                                <span class="fw-bold ps-1">Sofia</span>
+                                <span class="fw-bold ps-1">{{ contact.name }}</span>
                                 <span class="ps-1">Ultimo messaggio inviato</span>
                                 
                             </div>
