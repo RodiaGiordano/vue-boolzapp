@@ -1,17 +1,27 @@
 .container{
-    
     background-image: linear-gradient(to bottom,#009688 20%, #DBDBD1 50%, gray);
-      
+    width: 1440px;
+    height: 100vh;
 }
 
 
 .debug{
     border: 2px dashed red;
-    height: 300px;
+    /* height: 300px; */
 }
 
+main.row{
+    width: 90%;
+    padding: 20px 0px;
+}
 
 /*** ASIDE ***/
+
+.aside_bar{
+    background-color: #F9F9F9;
+    border-right: 1px solid grey;
+    
+}
 
 .chat_defoult{
     background-color: #EAEAEA;
@@ -32,7 +42,8 @@
 }
 
 .icon{
-    color: #EAEAEA;
+    color: #B1B1B1;
+    
     
 }
 
@@ -58,4 +69,17 @@
     background-color: white;
     color: #8EDAFC;
     
+}
+
+
+/*** MAIN CHAT ***/
+
+.main_chat{
+    background-image: url('../img/mine.jpg') ;
+}
+
+.input_message{
+    background-color:#EAEAEA ;
+    
+
 }

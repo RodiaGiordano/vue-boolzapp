@@ -24,9 +24,9 @@
 <body>
     <div class="wrapper container" id="app">
 
-        <main class="row w-90">
+        <main class="row m-auto h-100">
         <!-- aside -->
-            <div class="col-5 debug p-0">
+            <section class="col-5 p-0 aside_bar">
 
                 <!-- defoult chat-top -->
                 <div class="chat_defoult d-flex p-2 align-items-center">
@@ -38,11 +38,11 @@
 
                     
                     <div class="icon d-flex gap-3 pe-2 align-items-center">
-                        <i class="fa-solid fa-circle-notch fa-lg"></i>
+                        <i class="fa-solid fa-circle-notch "></i>
 
-                        <i class="fa-solid fa-message fa-lg"></i>
+                        <i class="fa-solid fa-message "></i>
 
-                        <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                        <i class="fa-solid fa-ellipsis-vertical "></i>
                     </div>
                 </div>
 
@@ -71,26 +71,64 @@
                 
                 
                 
-
-                
-                    <div class="input_aside">
-                        <div class="input-group mb-3">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1">
+                <div class="input_aside p-1">
+                    <div class="input-group mb-3">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text bg-color-white " id="addon-wrapping">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        </div>
-                        
+                            </span>
+                            <input type="text" class="form-control" placeholder="cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                          </div>
                     </div>
+                </div>
+
                 
-                <div></div>
+                        
+                <!-- chat group -->
+                <div class="debug"></div>
 
-            </div>
+            </section>
 
 
-            <div class="col-7 debug">
+            <section class="col-7 p-0 h-100 main_chat d-flex flex-column justify-content-between">
+                <div class="chat_defoult p-2 d-flex align-items-center">
+                    <div class="circle_icon">
+                        <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                    </div>
+                        
+                    <p class="me-auto mb-0 fw-bold ps-1">Sofia</p>
 
-            </div>
+                    
+                    <div class="icon d-flex gap-3 pe-2 align-items-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <i class="fa-solid fa-paperclip"></i>
+
+                        <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                    </div>
+                </div>
+
+
+                <div class="jumbo_message">
+
+                </div>
+
+
+
+                <div class="input_message d-flex justify-content-center gap-3 align-items-center py-2">
+
+                    <i class="fa-regular fa-face-smile fa-lg"></i>
+                    <div class="input-group w-75">
+                        <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    </div>
+                    <i class="fa-solid fa-microphone fa-lg"></i>
+                        
+
+
+
+                </div>
+
+            </section>
         </main>
 
         
