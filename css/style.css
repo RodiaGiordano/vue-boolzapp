@@ -1,7 +1,6 @@
 .container{
     background-image: linear-gradient(to bottom,#009688 20%, #DBDBD1 50%, gray);
     width: 1440px;
-    height: 100vh;
 }
 
 
@@ -20,6 +19,8 @@ main.row{
 .aside_bar{
     background-color: #F9F9F9;
     border-right: 1px solid grey;
+    
+    overflow: hidden;
     
 }
 
@@ -43,7 +44,6 @@ main.row{
 
 .icon{
     color: #B1B1B1;
-    
     
 }
 
@@ -73,9 +73,17 @@ main.row{
 
 /*** aside list_contacts ***/
 
+
+.chat_section, .jumbo_message{
+    overflow-y: auto;
+}
+
+
+
 .list_contacts{
     list-style-type: none;
     cursor: pointer;
+    
 }
 
 .list_contacts:hover{
@@ -92,11 +100,18 @@ main.row{
     font-size: 0.8rem;
 }
 
+
+
+
 /*** MAIN CHAT ***/
 
 .main_chat{
     background-image: url('../img/mine.jpg') ;
+    height: 700px;
+    overflow:hidden;
+    
 }
+
 
 .input_message{
     background-color:#EAEAEA ;
