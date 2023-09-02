@@ -132,6 +132,53 @@ main.row{
 
 
 .input_message{
+    margin-top: auto;
     background-color:#EAEAEA ;
     
+}
+
+/* style message */
+
+.jumbo_message{
+    width: 80%;
+    margin: 40px auto;
+}
+
+
+.text_message{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.text_message.sent{
+    justify-content: left;
+}
+
+
+.text_message> .message{
+    
+    padding: 15px;
+    border-radius: 15px;
+    text-align: left;
+    max-width: 500px;
+    min-width: 400px;
+    font-size: 0.9rem;
+    line-height: 1rem
+}
+
+.text_message sub{
+    font-size: 0.6rem;
+    float: right;
+    margin-top: 15px;
+    color: grey;
+}
+
+.text_message.received > .message{
+    
+    background-color: #D5F9BA;
+}
+
+.text_message.sent > .message{
+    background-color: #FFFFFF;
 }

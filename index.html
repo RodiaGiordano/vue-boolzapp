@@ -82,39 +82,40 @@
                 <div class="chat_section">
 
                     <ul class="list_contacts mb-0 p-0">
-                        <li v-for="(contact, index) in contacts" in contacts class=''>
+                        <!-- stampo i contatti -->
+                        <li v-for="(contact, index) in contacts" @click="openChat(index)" in contacts class=''>
                             <div class="circle_icon">
-                                <img class="avatar" :src="contacts[index].avatar" alt="">
+                                <img class="avatar" :src="contact.avatar" alt="">
                             </div>
                                 
+                            
                             <div class="card_chat me-auto">
-
                                 <span class="fw-bold ps-1">{{ contact.name }}</span>
                                 <span class="ps-1">Ultimo messaggio inviato</span>
-                                
                             </div>
+                                
         
-                            
                             <div class="icon d-flex gap-3 pe-2 align-items-center">
                                 <span class="message_time">12:00</span>
                             </div>
                         </li>
+                    </ul>
+                            
+                </div>
+            </section>
                         
                             
-                    </ul>
 
-                </div>
                     
-            </section>
 
             <!-- info chat -->
             <section class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
                 <div class="chat_defoult p-2 d-flex align-items-center">
                     <div class="circle_icon">
-                        <img class="avatar" src="./img/avatar_1.jpg" alt="">
+                        <img class="avatar" :src="contacts[activeChat].avatar" alt="">
                     </div>
                         
-                    <p class="me-auto mb-0 fw-bold ps-1">Sofia</p>
+                    <p class="me-auto mb-0 fw-bold ps-1">{{contacts[activeChat].name}}</p>
 
                     
                     <div class="icon d-flex gap-3 pe-2 align-items-center">
@@ -130,9 +131,25 @@
                 <!-- chat -->
                 <div class="jumbo_message">
                     
+                    
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'sent' ? 'received' : 'sent'">
+                        <span class="message ">
+                                {{messageSent.message}}
+                            <sub>15:50</sub>
+                        </span>
+                    </div>
+
+                    <!-- <div class="text_message sent">
+                        <span class="message">
+                            mi piacciono i gatti
+                            <sub>15:50</sub>
+                        </span>
+                    </div> -->
+
+                    
                 </div>
-
-
+                
+                
                 <!-- input send messages -->
                 <div class="input_message d-flex justify-content-center gap-3 align-items-center py-2">
                     <i class="fa-regular fa-face-smile fa-lg"></i>
@@ -142,9 +159,14 @@
                     <i class="fa-solid fa-microphone fa-lg"></i>
                 </div>
 
+                
+                
             </section>
-
-
+            
+            <!-- <div class="text_message cpu">
+                no, ho solo gatti
+            </div> -->
+            
 
 
 
@@ -159,12 +181,12 @@
 
 
             
+            
+            
+            
+            
+            
         </main>
-
-        
-       
-        
-        
     </div>
    
 
