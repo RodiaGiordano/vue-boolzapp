@@ -83,7 +83,7 @@
 
                     <ul class="list_contacts mb-0 p-0">
                         <!-- stampo i contatti -->
-                        <li v-for="(contact, index) in contacts" @click="openChat(index)" in contacts class=''>
+                        <li v-for="(contact, index) in contacts" @click="openChat(index)">
                             <div class="circle_icon">
                                 <img class="avatar" :src="contact.avatar" alt="">
                             </div>
@@ -132,19 +132,12 @@
                 <div class="jumbo_message">
                     
                     
-                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'sent' ? 'received' : 'sent'">
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'sent' ? 'sent' : 'received'">
                         <span class="message ">
                                 {{messageSent.message}}
                             <sub>15:50</sub>
                         </span>
                     </div>
-
-                    <!-- <div class="text_message sent">
-                        <span class="message">
-                            mi piacciono i gatti
-                            <sub>15:50</sub>
-                        </span>
-                    </div> -->
 
                     
                 </div>
@@ -154,7 +147,7 @@
                 <div class="input_message d-flex justify-content-center gap-3 align-items-center py-2">
                     <i class="fa-regular fa-face-smile fa-lg"></i>
                     <div class="input-group w-75">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Scrivi un messaggio">
+                        <input  @keyup.enter="newMessageInput(activeChat)" v-model="newMessage" type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Scrivi un messaggio">
                     </div>
                     <i class="fa-solid fa-microphone fa-lg"></i>
                 </div>
@@ -162,11 +155,7 @@
                 
                 
             </section>
-            
-            <!-- <div class="text_message cpu">
-                no, ho solo gatti
-            </div> -->
-            
+         
 
 
 
