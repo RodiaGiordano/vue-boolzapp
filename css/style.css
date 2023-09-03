@@ -182,3 +182,38 @@ main.row{
 .text_message.sent > .message{
     background-color: #FFFFFF;
 }
+
+
+/* CHAT NON SELEZIONATA ONLOAD */
+
+.empty_chat{
+    background-color: #E9EBEB;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+
+    text-align: center;
+}
+
+.empty_chat> .logo_empty_chat{
+    font-size: xx-large;
+    color:  lightgray;
+}
+
+.empty_chat p{
+    color: grey;
+    text-align: center;
+    font-size: small;
+
+}
+
+
+.empty_chat > span{
+    color:  gray;
+    font-size: 0.7rem;
+    
+}

@@ -100,19 +100,19 @@
                             </div>
                         </li>
                     </ul>
-                            
                 </div>
             </section>
+                            
                         
                             
 
                     
 
             <!-- info chat -->
-            <section class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
+            <section v-if="contacts[activeChat].visible" class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
                 <div class="chat_defoult p-2 d-flex align-items-center">
                     <div class="circle_icon">
-                        <img class="avatar" :src="contacts[activeChat].avatar" alt="">
+                        <img class="avatar" :src="contacts[activeChat].avatar" alt="" >
                     </div>
                         
                     <p class="me-auto mb-0 fw-bold ps-1">{{contacts[activeChat].name}}</p>
@@ -152,9 +152,31 @@
                     <i class="fa-solid fa-microphone fa-lg"></i>
                 </div>
 
-                
-                
             </section>
+                
+            <section v-else class="empty_chat col-8">
+
+                <div class="logo_empty_chat">
+                    <i class="fa-brands fa-whatsapp fa-2xl"></i>
+                 </div> 
+
+                
+                <div class="info_empty_chat">
+                    <h6>WhatsApp per Windows</h6>
+                    <p>
+                        Invia e mantieni messaggi senza mantenere il telefono connesso ad Internet. <br>
+                        Usa WhatsApp su un massimo di 4 dispositivi e 1 telefono contemporaneamente
+                    </p>
+                </div>
+
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                    Con crittografia end-to-end
+                </span>
+                
+
+            </section>
+                
          
 
 

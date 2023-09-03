@@ -47,10 +47,10 @@ createApp({
               date: '10:00',
               message: 'ok',
               status: 'sent'
-            })
-          },1000)
-        }
+          } )
+        },1000)
       }
+    }
   }
 
 }).mount('#app')
