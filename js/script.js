@@ -18,6 +18,8 @@ createApp({
       newMessage:"",
 
       searchContact:"",
+
+      appOnload: false,
     
     }   
   },
@@ -30,6 +32,7 @@ createApp({
     openChat(index){
       
       this.activeChat = index;
+      this.appOnload = true;
     },
     
     

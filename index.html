@@ -109,7 +109,7 @@
                     
 <!-- v-if="contacts[activeChat].visible" -->
             <!-- info chat -->
-            <section  class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
+            <section v-if="appOnload" class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
                 <div class="chat_defoult p-2 d-flex align-items-center">
                     <div class="circle_icon">
                         <img class="avatar" :src="contacts[activeChat].avatar" alt="" >
@@ -158,7 +158,7 @@
 
             </section>
                 
-            <!-- <section v-else class="empty_chat col-8">
+            <section v-else class="empty_chat col-8">
 
                 <div class="logo_empty_chat">
                     <i class="fa-brands fa-whatsapp fa-2xl"></i>
@@ -179,7 +179,7 @@
                 </span>
                 
 
-            </section> -->
+            </section> 
                 
          
 
