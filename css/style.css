@@ -31,11 +31,16 @@ main.row{
 
 
 .circle_icon{
-    object-fit:cover;
+    
     overflow: hidden;
     height: 60px;
+    line-height: 60px;
+    text-align: center;
     aspect-ratio: 1;
     border-radius: 50%;
+}
+
+.circle_icon{
 }
 
 .avatar{
@@ -149,6 +154,7 @@ main.row{
     display: flex;
     justify-content: end;
     margin-bottom: 10px;
+    
 }
 
 .text_message.sent{
@@ -177,6 +183,9 @@ main.row{
 .text_message.received > .message{
     
     background-color: #D5F9BA;
+    
+    
+   
 }
 
 .text_message.sent > .message{

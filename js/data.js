@@ -3,7 +3,7 @@ const contacts = [
     {
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
-        visible: false,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',

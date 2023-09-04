@@ -10,6 +10,8 @@ createApp({
       activeChat: 0,
 
       newMessage:"",
+
+      searchContact:"",
     
     }   
   },
@@ -25,7 +27,7 @@ createApp({
     },
     
     
-    newMessageInput(activeChat, newMessage){
+    newMessageInput(activeChat){
   
     
       if(this.newMessage){
@@ -50,7 +52,26 @@ createApp({
           } )
         },1000)
       }
+    },
+
+    searchInListContacts(searchContact){
+     
+     for(const contact of this.contacts){
+  
+       contact.visible = false;
+
+        if((contact.name.toLowerCase().trim()).includes(searchContact.toLowerCase().trim())){
+
+          contact.visible = true;
+        }
+        console.log(contact.visible)
+      }
+       
+         
+      
     }
+   
+
   }
 
 }).mount('#app')
