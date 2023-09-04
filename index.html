@@ -141,7 +141,7 @@
                             {{messageSent.message}}
                             <sub>15:50</sub>
                         
-                            <i class="fa-solid fa-chevron-down"></i>
+                            <i class="fa-solid fa-chevron-down"  v-if="messageSent.status == 'received'"></i>
 
                             <div class="message_menu d-none" v-if="messageSent.status == 'received'">
                                 <div>
