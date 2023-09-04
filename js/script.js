@@ -1,5 +1,5 @@
 // fixare input list contact (solo caratteri alfanumerici)?
-// fixare gradiente
+
 // fixare scrollbar jumbo_message
 // aggiungere i controlli mancanti
 // fixare html_css structure
@@ -19,7 +19,7 @@ createApp({
 
       searchContact:"",
 
-      appOnload: false,
+      appOnload: true,
     
     }   
   },
@@ -32,7 +32,7 @@ createApp({
     openChat(index){
       
       this.activeChat = index;
-      this.appOnload = true;
+      this.appOnload = false;
     },
     
     
@@ -69,7 +69,7 @@ createApp({
     for(wordSearch of this.contacts){
         wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
       }
-    }
+    },
     
     
   }

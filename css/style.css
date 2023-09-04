@@ -75,7 +75,7 @@ main.row{
 /*** aside list_contacts ***/
 
 
-.chat_section, .jumbo_message{
+.chat_section{
     overflow-y: auto;
     
 }
@@ -125,7 +125,7 @@ main.row{
 .main_chat{
     background-image: url('../img/mine.jpg') ;
     height: 700px;
-    overflow:hidden;
+    
     
 }
 
@@ -140,7 +140,9 @@ main.row{
 
 .jumbo_message{
     width: 80%;
-    margin: 40px auto;
+    margin: 20px auto;
+    overflow:hidden;
+    overflow-y: auto;
 }
 
 
@@ -157,33 +159,53 @@ main.row{
 
 
 .text_message> .message{
-    
+
+    display: flex;
+    position: relative;
     padding: 15px;
     border-radius: 15px;
-    text-align: left;
+
     max-width: 500px;
     min-width: 400px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1rem
 }
 
+
+
 .text_message sub{
     font-size: 0.6rem;
-    float: right;
-    margin-top: 15px;
-    color: grey;
+    margin: 15px 0 0 auto;
+    color: grey; 
+    align-self: self-end;
+
 }
 
 .text_message.received > .message{
     
     background-color: #D5F9BA;
     
-    
-   
 }
 
 .text_message.sent > .message{
     background-color: #FFFFFF;
+}
+
+.message_menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: white;
+    padding: 10px 0;
+
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 #888888;
+}
+
+.message_menu > div{
+
+    padding: 5px 20px;
 }
 
 

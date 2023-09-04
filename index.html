@@ -105,11 +105,8 @@
                             
                         
                             
-
-                    
-<!-- v-if="contacts[activeChat].visible" -->
             <!-- info chat -->
-            <section v-if="appOnload" class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
+            <section v-if="!appOnload" class="col-8 p-0 main_chat d-flex flex-column justify-content-between">
                 <div class="chat_defoult p-2 d-flex align-items-center">
                     <div class="circle_icon">
                         <img class="avatar" :src="contacts[activeChat].avatar" alt="" >
@@ -134,12 +131,28 @@
 
                 <!-- chat -->
                 <div class="jumbo_message">
+                    .jumbo_wrapper
+
                     
                     
                     <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'sent' ? 'sent' : 'received'">
                         <div class="message ">
-                                {{messageSent.message}}
+                            
+                            {{messageSent.message}}
                             <sub>15:50</sub>
+                        
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                            <div class="message_menu">
+                                <div>
+                                    Message info
+                                </div>
+                                <div>
+                                    Delete message
+                                </div>
+                                
+                            </div>
+
                         </div>
                     </div>
 
