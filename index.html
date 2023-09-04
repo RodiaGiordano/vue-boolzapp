@@ -131,19 +131,19 @@
 
                 <!-- chat -->
                 <div class="jumbo_message">
-                    .jumbo_wrapper
+                
 
                     
                     
-                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'sent' ? 'sent' : 'received'">
-                        <div class="message ">
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'received' : 'sent'">
+                        <div class="message">
                             
                             {{messageSent.message}}
                             <sub>15:50</sub>
                         
                             <i class="fa-solid fa-chevron-down"></i>
 
-                            <div class="message_menu">
+                            <div class="message_menu d-none" v-if="messageSent.status == 'received'">
                                 <div>
                                     Message info
                                 </div>

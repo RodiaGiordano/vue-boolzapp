@@ -139,10 +139,10 @@ main.row{
 /* style message */
 
 .jumbo_message{
-    width: 80%;
-    margin: 20px auto;
+    height: 100%;
     overflow:hidden;
     overflow-y: auto;
+    padding: 20px 50px;
 }
 
 

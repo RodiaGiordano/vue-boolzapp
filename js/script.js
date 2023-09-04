@@ -20,6 +20,8 @@ createApp({
       searchContact:"",
 
       appOnload: true,
+
+      optionMessage: true,
     
     }   
   },
@@ -66,10 +68,11 @@ createApp({
     searchInListContacts(searchContact){
      const inputTrim = searchContact.trim().toLowerCase()
        
-    for(wordSearch of this.contacts){
-        wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
-      }
+      for(wordSearch of this.contacts){
+          wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
+        }
     },
+    
     
     
   }
