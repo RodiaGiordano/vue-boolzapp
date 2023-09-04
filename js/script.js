@@ -1,7 +1,9 @@
-// fixare input list contact (solo caratteri alfanumerici)
+// fixare input list contact (solo caratteri alfanumerici)?
 // fixare gradiente
-// aggiungere i controlli
+// fixare scrollbar jumbo_message
+// aggiungere i controlli mancanti
 // fixare html_css structure
+// insermento date
 
 
 const { createApp } = Vue

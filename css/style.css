@@ -5,10 +5,6 @@
 }
 
 
-.debug{
-    border: 2px dashed red;
-    /* height: 300px; */
-}
 
 main.row{
     width: 90%;
@@ -40,8 +36,6 @@ main.row{
     border-radius: 50%;
 }
 
-.circle_icon{
-}
 
 .avatar{
     width: 100%;
