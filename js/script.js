@@ -1,3 +1,7 @@
+// fixare input list contact (solo caratteri alfanumerici)
+// fixare gradiente
+// aggiungere i controlli
+// fixare html_css structure
 
 
 const { createApp } = Vue
@@ -55,24 +59,18 @@ createApp({
     },
 
     searchInListContacts(searchContact){
-     
-     for(const contact of this.contacts){
-  
-       contact.visible = false;
-
-        if((contact.name.toLowerCase().trim()).includes(searchContact.toLowerCase().trim())){
-
-          contact.visible = true;
-        }
-        console.log(contact.visible)
-      }
+     const inputTrim = searchContact.trim().toLowerCase()
        
-         
-      
+    for(wordSearch of this.contacts){
+        wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
+      }
     }
-   
-
+    
+    
   }
+        
+      
+   
 
 }).mount('#app')
 
@@ -82,7 +80,7 @@ createApp({
 
 
   
-  
+
   
 
 
