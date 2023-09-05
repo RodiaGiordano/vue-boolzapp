@@ -26,9 +26,9 @@
     <title>Boolzap</title>
 </head>
 <body>
-    <div class="wrapper container" id="app" >
+    <div class="wrapper container" id="app" @keyup.esc="emptyChat()" tabindex="0">
 
-        <main class="row m-auto h-100" @keyup.esc="prova()" tabindex="0" >
+        <main class="row m-auto h-100">
         <!-- aside -->
             <section class="col-4 p-0 aside_bar">
 
@@ -95,12 +95,14 @@
                             
                             <div class="card_chat me-auto">
                                 <span class="fw-bold ps-1">{{ contact.name }}</span>
-                                <span class="ps-1">{{contact.messages.at(-1).message}}</span>
+                                <span class="ps-1">
+                                    {{contact.messages.at(-1).message}}
+                                </span>
                             </div>
                                 
         
                             <div class="icon d-flex gap-3 pe-2 align-items-center">
-                                <span class="message_time">aggiungere time</span>
+                                <span class="message_time">12:00</span>
                             </div>
                         </li>
                     </ul>
@@ -136,18 +138,21 @@
                 <!-- chat -->
                 <div class="jumbo_message">
                 
-                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'received' : 'sent'">
-                        <div class="message">
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status.includes('received') ? 'received' : 'sent'">
+                        <div class="message" :class="messageSent.status.includes('deleted') ? 'deleted_message': ''">
+                            <i class="fa-solid fa-ban fa-sm" v-if="messageSent.status.includes('deleted')"></i>
                             
                             {{messageSent.message}}
+
+                            
                             <sub>15:50</sub>
                         
-                            <div class="dropdown">
+                            <div class="dropdown" v-if="!messageSent.status.includes('deleted')">
                                 <div data-bs-toggle="dropdown">
                                   
-                                  <i class="fa-solid fa-chevron-down"></i>
+                                    <i class="fa-solid fa-chevron-down"></i>
                                   
-                              </div>
+                                </div>
                                 <ul class="dropdown-menu">
                                   <li><div class="dropdown-item">Message info</div></li>
                                   <li><div class="dropdown-item" @click="deleteMessage(index)">Delete Message</div></li>

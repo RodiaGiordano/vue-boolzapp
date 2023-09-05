@@ -98,18 +98,23 @@ createApp({
     deleteMessage(index){
       
       const sentOrRecived = this.activeContact.messages[index].status == "received" ? "received" : "sent";
-      console.log(sentOrRecived)
-      this.activeContact.messages.splice(index, 1, {
+     
+      const textDeleted = this.activeContact.messages[index].status == "sent" ? " Questo messaggio è stato eliminato." : " Hai eliminato questo messaggio.";
+
+      this.activeContact.messages.splice(index, 1, 
+       {
       
         date: '10:00',
-        message: 'Il messaggio è stato eliminato',
-        status: sentOrRecived,
+        message: textDeleted,
+        status: sentOrRecived + ' deleted',
   
-      })
+      }
+      )
+      
       
     },
 
-    prova(){
+    emptyChat(){
       this.appOnload = true}
 
   },
