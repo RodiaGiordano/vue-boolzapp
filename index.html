@@ -95,12 +95,12 @@
                             
                             <div class="card_chat me-auto">
                                 <span class="fw-bold ps-1">{{ contact.name }}</span>
-                                <span class="ps-1">{{lastMessage}}</span>
+                                <span class="ps-1">{{contact.messages.at(-1).message}}</span>
                             </div>
                                 
         
                             <div class="icon d-flex gap-3 pe-2 align-items-center">
-                                <span class="message_time">{{time()}}</span>
+                                <span class="message_time">aggiungere time</span>
                             </div>
                         </li>
                     </ul>
