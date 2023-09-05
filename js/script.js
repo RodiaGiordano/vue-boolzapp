@@ -2,8 +2,10 @@
 // refactoring HTML e CSS
 // refactoring vue
 // insermento date
-// keyup esc per uscire dalla chat
-// const { DateTime } = require("luxon");
+// keyup esc per uscire dalla chat()
+
+var DateTime = luxon.DateTime;
+
 
 const { createApp } = Vue
 
@@ -16,12 +18,12 @@ createApp({
 
       newMessage:"",
 
+      lastMessage:"",
+
       searchContact:"",
 
       appOnload: true,
 
-      
-      
       
     }   
   },
@@ -30,13 +32,12 @@ createApp({
 
     activeContact(){
 
-      const activeContact = this.contacts[this.activeChat];
-      return activeContact;
+      return this.contacts[this.activeChat];
     },
 
     inputTrim(){
-      const inputTrim = this.searchContact.trim().toLowerCase()
-      return inputTrim;
+  
+      return this.searchContact.trim().toLowerCase()
     },
 
 
@@ -44,6 +45,24 @@ createApp({
        
   
   methods:{
+
+    // lastMessage(){
+    //   const lastMessage = this.newMessage
+    //   return lastMessage;
+    // },
+
+    time(){
+      const x = new Date(this.contacts[0].messages[0].date)
+      const y = x.getHours()
+      const z = x.getMinutes()
+     
+     
+      const timeNow = y + ':' + z
+
+      return timeNow;
+  
+
+    },
     
     openChat(index){
       
@@ -51,33 +70,49 @@ createApp({
       this.appOnload = false;
      
     },
+
+    
     
     
     newMessageInput(){
   
-    
+      
+      
       if(this.newMessage){
         
-      
+        this.lastMessage = this.newMessage;
+        
         this.activeContact.messages.push(
-        {
-
-          date: '10:00',
-          message: this.newMessage,
-          status: 'received'
-
-        })
-
-        this.newMessage= '';
-
+          {
+            
+            date: '10:00',
+            message: this.newMessage,
+            status: 'received'
+            
+          })
+          
+          
+        }
+        
+        // this.lastMessage = this.newMessage;
+        // this.lastMessage= '';
+        
+        
+        
         setTimeout(()=>{
           this.activeContact.messages.push({
-              date: '10:00',
-              message: 'ok',
-              status: 'sent'
+            date: '10:00',
+            message: 'ok',
+            status: 'sent'
           } )
         },1000)
-      }
+        
+        
+        this.newMessage= '';
+        this.contacts[this.activeChat].messages.at(-1).message = this.lastMessage;
+
+       
+
     },
 
     searchInListContacts(searchContact){
@@ -99,20 +134,16 @@ createApp({
       
     },
     
-    
-   openMenuChat(messageSent, index){
-    this.openOption == index
-   }
   
 
-  }
+  },
+
+ 
         
       
    
 
 }).mount('#app')
-
-
 
 
   

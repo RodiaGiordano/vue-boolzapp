@@ -15,21 +15,20 @@
     <link rel="stylesheet" href="./css/style.css">
     
     <!-- JS -->
-    <script src="./js/data.js" type="text/javascript" defer></script>
+    <script src="./js/data.js" type="text/javascript"></script>
     <script src="./js/script.js" type="text/javascript" defer></script>
+    <!-- Luxon libary -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.2/build/global/luxon.min.js"></script>
+    <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" ></script>
 
-    <!-- luxon libary -->
-    <script src="
-    https://cdn.jsdelivr.net/npm/luxon@3.4.2/build/global/luxon.min.js
-    "></script>
     
     <title>Boolzap</title>
 </head>
 <body>
     <div class="wrapper container" id="app">
 
-        <main class="row m-auto h-100">
+        <main class="row m-auto h-100" >
         <!-- aside -->
             <section class="col-4 p-0 aside_bar">
 
@@ -96,12 +95,12 @@
                             
                             <div class="card_chat me-auto">
                                 <span class="fw-bold ps-1">{{ contact.name }}</span>
-                                <span class="ps-1">Ultimo messaggio inviato</span>
+                                <span class="ps-1">{{lastMessage}}</span>
                             </div>
                                 
         
                             <div class="icon d-flex gap-3 pe-2 align-items-center">
-                                <span class="message_time">12:00</span>
+                                <span class="message_time">{{time()}}</span>
                             </div>
                         </li>
                     </ul>
@@ -135,15 +134,15 @@
 
 
                 <!-- chat -->
-                <div class="jumbo_message">
+                <div class="jumbo_message" @click="time()">
                 
-                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'received' : 'sent'">
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'sent' : 'received'">
                         <div class="message">
                             
                             {{messageSent.message}}
                             <sub>15:50</sub>
                         
-                            <div class="dropdown" v-if="messageSent.status == 'received'">
+                            <div class="dropdown">
                                 <div data-bs-toggle="dropdown">
                                   
                                   <i class="fa-solid fa-chevron-down" v-if="messageSent.status == 'received'"></i>
