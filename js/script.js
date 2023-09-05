@@ -55,7 +55,6 @@ createApp({
 
     
     
-    
     newMessageInput(){
   
       
@@ -84,10 +83,10 @@ createApp({
 
     },
 
-    searchInListContacts(searchContact){
+    searchInListContacts(){
        
       for(wordSearch of this.contacts){
-          const wordControl = wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
+          const wordControl = wordSearch.name.substring(0, (this.searchContact.length)).trim().toLowerCase();
 
           wordSearch.visible = this.inputTrim == wordControl;
         }
@@ -98,9 +97,20 @@ createApp({
     
     deleteMessage(index){
       
-      this.activeContact.messages.splice(index, 1)
+      const sentOrRecived = this.activeContact.messages[index].status == "received" ? "received" : "sent";
+      console.log(sentOrRecived)
+      this.activeContact.messages.splice(index, 1, {
+      
+        date: '10:00',
+        message: 'Il messaggio è stato eliminato',
+        status: sentOrRecived,
+  
+      })
       
     },
+
+    prova(){
+      this.appOnload = true}
 
   },
 

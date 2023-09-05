@@ -26,9 +26,9 @@
     <title>Boolzap</title>
 </head>
 <body>
-    <div class="wrapper container" id="app">
+    <div class="wrapper container" id="app" >
 
-        <main class="row m-auto h-100" >
+        <main class="row m-auto h-100" @keyup.esc="prova()" tabindex="0" >
         <!-- aside -->
             <section class="col-4 p-0 aside_bar">
 
@@ -134,9 +134,9 @@
 
 
                 <!-- chat -->
-                <div class="jumbo_message" @click="time()">
+                <div class="jumbo_message">
                 
-                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'sent' : 'received'">
+                    <div v-for="(messageSent, index) in contacts[activeChat].messages" class="text_message" :class="messageSent.status == 'received' ? 'received' : 'sent'">
                         <div class="message">
                             
                             {{messageSent.message}}
@@ -145,7 +145,7 @@
                             <div class="dropdown">
                                 <div data-bs-toggle="dropdown">
                                   
-                                  <i class="fa-solid fa-chevron-down" v-if="messageSent.status == 'received'"></i>
+                                  <i class="fa-solid fa-chevron-down"></i>
                                   
                               </div>
                                 <ul class="dropdown-menu">

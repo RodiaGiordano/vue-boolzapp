@@ -96,6 +96,7 @@ main.row{
 .list_contacts> li{
     display: flex;
     align-items: start;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     
     padding: 10px 0 10px 10px;
@@ -108,6 +109,9 @@ main.row{
 
 .card_chat> span{
     display: block;
+    
+
+    
 }
 
 .card_chat > span:last-child{
