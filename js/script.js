@@ -21,7 +21,7 @@ createApp({
 
       appOnload: true,
 
-      optionMessage: true,
+      openOption: 0,
     
     }   
   },
@@ -35,6 +35,8 @@ createApp({
       
       this.activeChat = index;
       this.appOnload = false;
+      console.log('active ' + this.activeChat)
+      console.log('index ' + index)
     },
     
     
@@ -72,9 +74,23 @@ createApp({
           wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
         }
     },
+
+
     
     
+    deleteMessage(index){
+      
+      this.contacts[this.activeChat].messages.splice(index, 1)
+      
+    },
     
+    
+   openMenuChat(messageSent, index){
+    this.openOption == index
+   }
+  
+
+
   }
         
       
