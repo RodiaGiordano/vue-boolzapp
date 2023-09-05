@@ -1,10 +1,9 @@
-// fixare input list contact (solo caratteri alfanumerici)?
 
-// fixare scrollbar jumbo_message
-// aggiungere i controlli mancanti
-// fixare html_css structure
+// refactoring HTML e CSS
+// refactoring vue
 // insermento date
-
+// keyup esc per uscire dalla chat
+// const { DateTime } = require("luxon");
 
 const { createApp } = Vue
 
@@ -21,12 +20,27 @@ createApp({
 
       appOnload: true,
 
-      openOption: 0,
-    
+      
+      
+      
     }   
   },
           
-          
+  computed: {
+
+    activeContact(){
+
+      const activeContact = this.contacts[this.activeChat];
+      return activeContact;
+    },
+
+    inputTrim(){
+      const inputTrim = this.searchContact.trim().toLowerCase()
+      return inputTrim;
+    },
+
+
+  },
        
   
   methods:{
@@ -35,18 +49,17 @@ createApp({
       
       this.activeChat = index;
       this.appOnload = false;
-      console.log('active ' + this.activeChat)
-      console.log('index ' + index)
+     
     },
     
     
-    newMessageInput(activeChat){
+    newMessageInput(){
   
     
       if(this.newMessage){
         
       
-        this.contacts[activeChat].messages.push(
+        this.activeContact.messages.push(
         {
 
           date: '10:00',
@@ -58,7 +71,7 @@ createApp({
         this.newMessage= '';
 
         setTimeout(()=>{
-            this.contacts[activeChat].messages.push({
+          this.activeContact.messages.push({
               date: '10:00',
               message: 'ok',
               status: 'sent'
@@ -68,10 +81,12 @@ createApp({
     },
 
     searchInListContacts(searchContact){
-     const inputTrim = searchContact.trim().toLowerCase()
+    //  const inputTrim = searchContact.trim().toLowerCase()
        
       for(wordSearch of this.contacts){
-          wordSearch.visible = inputTrim == wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
+          const wordControl = wordSearch.name.substring(0, (searchContact.length)).trim().toLowerCase();
+
+          wordSearch.visible = this.inputTrim == wordControl;
         }
     },
 
@@ -80,7 +95,7 @@ createApp({
     
     deleteMessage(index){
       
-      this.contacts[this.activeChat].messages.splice(index, 1)
+      this.activeContact.messages.splice(index, 1)
       
     },
     
@@ -89,7 +104,6 @@ createApp({
     this.openOption == index
    }
   
-
 
   }
         
@@ -100,10 +114,6 @@ createApp({
 
 
 
-
-
-
-  
 
   
 

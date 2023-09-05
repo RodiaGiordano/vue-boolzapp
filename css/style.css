@@ -201,7 +201,9 @@ main.row{
 
 /* OPTION MESSAGE */
 
-
+.message i {
+    cursor: pointer;
+}
 
 
 /* CHAT NON SELEZIONATA ONLOAD */
